@@ -13,7 +13,7 @@ Version: 1.3
 Release: 1.ohpc
 Summary: Common top-level OpenHPC directories
 
-Group: ohpc/admin
+Group: %{PROJ_NAME}/admin
 License: ASL 2.0
 Source0: OHPC_setup_compiler
 Source1: OHPC_setup_mpi
