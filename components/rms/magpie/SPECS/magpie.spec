@@ -35,7 +35,7 @@
 
 Summary: Scripts for running Big Data software in HPC environments
 Name: %{pname}%{PROJ_DELIM}
-Version: 2.5
+Version: 3.0
 Release: 1%{?dist}
 License: GPLv2
 URL: https://github.com/LLNL/magpie
@@ -46,7 +46,7 @@ Source0: https://github.com/LLNL/magpie/archive/%{version}.tar.gz
 # Java development package added to head node.
 BuildRequires: python-rpm-macros
 Requires: java-devel >= 1.8
-Requires: python2
+Requires: python3
 
 #!BuildIgnore: post-build-checks
 
