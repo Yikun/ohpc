@@ -115,7 +115,9 @@ jobs:
     name: Build on LEAP
     container:
       image: registry.opensuse.org/opensuse/leap:15.3
-    steps:
+    steps:    
+    - name: Install git
+      run: zypper -n install git
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
