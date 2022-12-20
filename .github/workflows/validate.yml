@@ -23,14 +23,14 @@ jobs:
       image: docker.io/library/rockylinux:8
 
     steps:
-    - name: Setup
-      run: |
-        dnf install -y epel-release git python3
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
     - id: files
       uses: Ana06/get-changed-files@v2.2.0
+    - name: Setup
+      run: |
+        dnf install -y epel-release python3
     - name: Validate Changes
       run: |
         tests/ci/check_spec.py ${{ steps.files.outputs.added_modified }}
@@ -58,8 +58,6 @@ jobs:
     container:
       image: docker.io/library/rockylinux:8
     steps:
-    - name: Install git
-      run: dnf -y install git
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
@@ -87,8 +85,6 @@ jobs:
       image: docker.io/library/rockylinux:8
     needs: build_on_rhel
     steps:
-    - name: Install git
-      run: dnf -y install git
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
@@ -119,7 +115,7 @@ jobs:
     name: Build on LEAP
     container:
       image: registry.opensuse.org/opensuse/leap:15.3
-    steps:
+    steps:    
     - name: Install git
       run: zypper -n install git
     - uses: actions/checkout@v2
@@ -140,8 +136,6 @@ jobs:
     container:
       image: quay.io/centos/centos:stream9
     steps:
-    - name: Install git
-      run: dnf -y install git
     - uses: actions/checkout@v3
     - name: Setup
       run: tests/ci/prepare-ci-environment.sh
