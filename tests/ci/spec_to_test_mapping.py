@@ -167,6 +167,16 @@ test_map = {
         '',
         'oob',
         ''
+    # Enable the autoconf test when ohpc-autotools meta pkg is built
+    # 'components/dev-tools/autoconf/SPECS/autoconf.spec': [
+    #     'autotools',
+    #     '',
+    #     'ohpc-autotools'
+    # ],
+    'components/dev-tools/cmake/SPECS/cmake.spec': [
+        'cmake',
+        '',
+        'cmake-ohpc'
     ],
 }
 
