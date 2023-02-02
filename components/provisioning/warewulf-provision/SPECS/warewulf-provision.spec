@@ -13,7 +13,7 @@
 %define dname provision
 %define pname warewulf-%{dname}
 %define wwsrvdir /srv
-%define develSHA 98fcdc336349378c8ca1b5b0e7073a69a868a40f
+%define develSHA 0da0ab1797e13492e910c8b184bd5238050ad725
 %define wwextract warewulf3-%{develSHA}
 
 Name:    %{pname}%{PROJ_DELIM}
