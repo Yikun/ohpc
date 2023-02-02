@@ -17,7 +17,7 @@ Version: 1.4.0
 Release: 1%{?dist}
 Summary: Temporary workspace management
 License: GPL
-Source:  https://github.com/holgerBerger/hpc-workspace/archive/refs/tags/%{version}.tar.gz
+Source0:  https://github.com/holgerBerger/hpc-workspace/archive/refs/tags/%{version}.tar.gz
 Source1: ws.conf.template
 Group:   %{PROJ_NAME}/admin
 URL:     https://github.com/holgerBerger/hpc-workspace
