@@ -53,11 +53,11 @@ BuildRequires: libtirpc-devel
 BuildRequires: distribution-release
 %endif
 
-%if 0%{?rhel:1}
+%if 0%{?rhel:1} || 0%{?openEuler}
 %global httpsvc httpd
 %global httpgrp apache
 %global tftpsvc tftp-server
-%if %{rhel} >= 8
+%if 0%{?rhel} >= 8 || 0%{?openEuler}
 BuildRequires: systemd
 %global dhcpsrv dhcp-server
 %else
@@ -88,7 +88,7 @@ BuildRequires: gcc-x86_64-linux-gnu
 %endif # cross_compile
 
 # New RHEL and SLE include the required FS tools
-%if 0%{?rhel} >= 8 || 0%{?sle_version} >= 150000
+%if 0%{?rhel} >= 8 || 0%{?sle_version} >= 150000 || 0%{?openEuler}
 %global localtools 1
 BuildRequires: parted, e2fsprogs, bsdtar
 Requires: parted, autofs, e2fsprogs
@@ -96,7 +96,7 @@ BuildRequires: libarchive.so.13()(64bit)
 Requires: libarchive.so.13()(64bit)
 %global CONF_FLAGS --with-local-e2fsprogs --with-local-libarchive --with-local-parted --with-local-partprobe
 # The included Busybox will not build on OpenSUSE 15.4
-%if 0%{?sle_version} >= 150400
+%if 0%{?sle_version} >= 150400 || 0%{?openEuler}
 BuildRequires: busybox
 Requires: busybox
 %global CONF_FLAGS %{CONF_FLAGS} --with-local-busybox
@@ -114,7 +114,7 @@ Provides: libarchive.so.13()(64bit)
 Warewulf is an operating system management toolkit designed to facilitate
 large scale deployments of systems on physical, virtual and cloud-based
 infrastructures. It facilitates elastic and large deployments consisting
-of groups of homogeneous systems.
+of groups of homogenous systems.
 
 Warewulf Provision contains the core components, extensions, and tools to
 administrate system provisioning.  To perform provisioning, the
@@ -191,7 +191,7 @@ Requires: warewulf-common%{PROJ_DELIM}
 Warewulf is an operating system management toolkit designed to facilitate
 large scale deployments of systems on physical, virtual and cloud-based
 infrastructures. It facilitates elastic and large deployments consisting
-of groups of homogeneous systems.
+of groups of homogenous systems.
 
 This package includes tools and files to create an initramfs
 image and to provide boot capability for %{_arch} architecture.
@@ -209,7 +209,7 @@ Requires: %{name} = %{version}-%{release}
 Requires: %{name}-server-ipxe-%{_arch} = %{version}-%{release}
 Requires: %{httpsvc}, perl(Apache), %{tftpsvc}, %{dhcpsrv}
 
-%if 0%{?rhel} >= 8
+%if 0%{?rhel} >= 8 || 0%{?openEuler}
 Requires(post): policycoreutils-python-utils
 %else # Not RHEL 8+
 %if 0%{?sle_version} >= 150100
@@ -223,7 +223,7 @@ Requires(post): policycoreutils-python
 Warewulf is an operating system management toolkit designed to facilitate
 large scale deployments of systems on physical, virtual and cloud-based
 infrastructures. It facilitates elastic and large deployments consisting
-of groups of homogeneous systems.
+of groups of homogenous systems.
 
 This package contains the CGI scripts and event components to
 provision systems.  Systems used solely for administration of Warewulf
@@ -293,7 +293,7 @@ BuildArch: noarch
 Warewulf is an operating system management toolkit designed to facilitate
 large scale deployments of systems on physical, virtual and cloud-based
 infrastructures. It facilitates elastic and large deployments consisting
-of groups of homogeneous systems.
+of groups of homogenous systems.
 
 This package provides bundled iPXE binaries for x86_64.
 
@@ -315,7 +315,7 @@ BuildArch: noarch
 Warewulf is an operating system management toolkit designed to facilitate
 large scale deployments of systems on physical, virtual and cloud-based
 infrastructures. It facilitates elastic and large deployments consisting
-of groups of homogeneous systems.
+of groups of homogenous systems.
 
 This package provides bundled iPXE binaries for aarch64.
 
@@ -336,7 +336,7 @@ BuildArch: noarch
 Warewulf is an operating system management toolkit designed to facilitate
 large scale deployments of systems on physical, virtual and cloud-based
 infrastructures. It facilitates elastic and large deployments consisting
-of groups of homogeneous systems.
+of groups of homogenous systems.
 
 For user convenience, Warewulf is distributed with some third-party
 software.  While Warewulf itself is licensed under a DOE license
