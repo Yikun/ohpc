@@ -31,11 +31,11 @@ URL:       https://hpc.github.io/%{pname}/
 Source0:   https://github.com/hpc/charliecloud/releases/download/v%{version}/charliecloud-%{version}.tar.gz
 Source1:   Build
 
-BuildRequires: gcc
+BuildRequires: gcc make
 %if 0%{?centos_version} || 0%{?rhel_version}
 BuildRequires: python36
 %endif
-%if 0%{?sles_version} || 0%{?suse_version}
+%if 0%{?sles_version} || 0%{?suse_version} || 0%{?openEuler}
 BuildRequires: python3
 %endif
 
@@ -45,7 +45,7 @@ Requires:  wget
 %if 0%{?centos_version} || 0%{?rhel_version}
 Requires:  python36
 %endif
-%if 0%{?sles_version} || 0%{?suse_version}
+%if 0%{?sles_version} || 0%{?suse_version} || 0%{?openEuler}
 Requires: python3
 %endif
 
