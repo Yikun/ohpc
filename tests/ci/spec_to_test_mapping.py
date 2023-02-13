@@ -193,6 +193,11 @@ test_map = {
         '',
         ''
     ],
+    'components/runtimes/charliecloud/SPECS/charliecloud.spec': [
+        'charliecloud',
+        '',
+        ''
+    ],
 }
 
 
