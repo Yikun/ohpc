@@ -199,7 +199,7 @@ test_map = {
         ''
     ],
     'components/io-libs/netcdf-fortran/SPECS/netcdf-fortran.spec': [
-        'netcdf-fortran',
+        'netcdf',
         '',
         ''
     ],
