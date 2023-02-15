@@ -173,7 +173,7 @@ def build_srpm_and_rpm(command, family=None):
         rebuild_command[-1] += " --define 'mpi_family %s'" % family
 
     # Disable parallel builds for below packages on aarch64 to avoid OOM
-    pkgs = ["boost-", "paraver-"]
+    pkgs = ["boost-", "paraver-", "trilinos-"]
     if any([x in src_rpm for x in pkgs]) and os.uname().machine == "aarch64":
         rebuild_command[-1] += " --define '_smp_mflags -j1'"
 
