@@ -1,0 +1,15 @@
+diff -uprN apptainer-1.1.6/mconfig apptainer-1.1.6-new/mconfig
+--- apptainer-1.1.6/mconfig	2023-02-14 21:46:54.000000000 +0000
++++ apptainer-1.1.6-new/mconfig	2023-02-23 16:53:01.416175595 +0000
+@@ -24,8 +24,8 @@ hstld=
+ hstranlib=
+ hstobjcopy=
+ hstgo=
+-hstgo_version="1.17.5"
+-hstgo_preferred_version="1.17.5"
++hstgo_version="1.17.3"
++hstgo_preferred_version="1.17.3"
+ hstgo_opts="go"
+
+ tgtcc=
+
