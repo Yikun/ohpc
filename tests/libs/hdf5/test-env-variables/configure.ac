@@ -15,11 +15,41 @@
 # access to either file, you may request a copy from help@hdfgroup.org.
 
 AC_PREREQ(2.69)
-AC_INIT(HDF5-examples, 0.1, help@hdfgroup.org)
+AC_INIT(HDF5-tests-env-variables, 0.20, [https://github.com/openhpc/ohpc])
+AC_CONFIG_MACRO_DIR([m4])
 dnl AM_INIT_AUTOMAKE takes a list of options that should be applied to
 dnl every Makefile.am when automake is run.
 AM_INIT_AUTOMAKE([foreign])
+m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 AM_CONFIG_HEADER(config.h)
+
+# karl.w.schulz@intel.com (8/28/14)
+# verify we have necessary HDF5 environment variables set
+AC_MSG_CHECKING([for HDF5_LIB environment variable])
+if test "x$HDF5_LIB" = "x"; then
+   AC_MSG_RESULT([no])
+   echo
+   AC_ERROR([HDF5_LIB not defined - please load hdf5 environment.])
+else
+   AC_MSG_RESULT([yes])
+fi
+AC_MSG_CHECKING([for HDF5_INC environment variable])
+if test "x$HDF5_INC" = "x"; then
+   AC_MSG_RESULT([no])
+   echo
+   AC_ERROR([HDF5_INC not defined - please load hdf5 environment.])
+else
+   AC_MSG_RESULT([yes])
+fi
+# unset default compilers and detect compiler toolchain from environment
+CC=" "
+CXX=" "
+FC=" "
+OHPC_COMPILER_FAMILY
+# Sets compiler.
+AC_PROG_CC()
+AC_PROG_FC()
+AC_PROG_CXX()
 
 # Turn off automake rebuild rules so make doesn't try to run automake
 # (which probably won't work).

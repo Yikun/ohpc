@@ -15,7 +15,7 @@
 # access to either file, you may request a copy from help@hdfgroup.org.
 
 AC_PREREQ(2.69)
-AC_INIT(HDF5-examples, 0.1, help@hdfgroup.org)
+AC_INIT(HDF5-tests-h5-wrappers, 0.20, [https://github.com/openhpc/ohpc])
 dnl AM_INIT_AUTOMAKE takes a list of options that should be applied to
 dnl every Makefile.am when automake is run.
 AM_INIT_AUTOMAKE([foreign])
@@ -239,4 +239,3 @@ echo C++ compiler flags............ : $CXXFLAGS
 echo Fortran compiler flags........ : $FCFLAGS
 echo 
 echo '-------------------------------------------------------------------------------------------------------------'
-
