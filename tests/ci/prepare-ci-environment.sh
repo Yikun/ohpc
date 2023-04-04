@@ -115,6 +115,12 @@ dnf_rhel() {
 dnf_openeuler() {
 	loop_command "${PKG_MANAGER}" -y install ${COMMON_PKGS} git dnf-plugins-core rpm-build gawk
 	loop_command "${PKG_MANAGER}" -y install ohpc-filesystem lmod-ohpc hostname
+	wget http://120.46.140.206:82/openEuler:/22.03:/LTS:/Next:/Epol/standard_aarch64/aarch64/apptainer-1.1.6-2.oe2203.aarch64.rpm
+	wget http://120.46.140.206:82/openEuler:/22.03:/LTS:/Next:/Epol/standard_aarch64/aarch64/apptainer-suid-1.1.6-2.oe2203.aarch64.rpm
+	wget http://120.46.140.206:82/openEuler:/22.03:/LTS:/Next:/Epol/standard_aarch64/aarch64/squashfuse-0.1.105-1.oe2203.aarch64.rpm
+	wget http://120.46.140.206:82/openEuler:/22.03:/LTS:/Next:/Epol/standard_aarch64/aarch64/fuse-overlayfs-1.9-1.oe2203.aarch64.rpm
+	wget http://120.46.140.206:82/openEuler:/22.03:/LTS:/Next:/Epol/standard_aarch64/aarch64/squashfuse-libs-0.1.105-1.oe2203.aarch64.rpm
+	yum install -y ./*.rpm
 }
 
 if [ "${PKG_MANAGER}" = "dnf" ]; then
