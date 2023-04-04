@@ -261,6 +261,8 @@ for i in sys.argv[1:]:
             admin_tests += f'--enable-{test_map[i][1]}'
         pkgs += test_map[i][2]
 
+tests += '--enable-singularity'
+
 print(
     'TESTS=(%s) ADMIN_TESTS=(%s) PKGS=(%s)' % (
         tests,
