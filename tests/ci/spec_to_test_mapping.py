@@ -211,7 +211,7 @@ test_map = {
     'components/runtimes/charliecloud/SPECS/charliecloud.spec': [
         'charliecloud',
         '',
-        'singularity-ce'
+        'apptainer'
      ],
     'components/io-libs/netcdf-fortran/SPECS/netcdf-fortran.spec': [
         'netcdf',
