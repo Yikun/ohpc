@@ -43,6 +43,7 @@ openeuler_task:
     gpgcheck=1
     gpgkey=http://repo.openeuler.org/openEuler-22.03-LTS/OS/\$basearch/RPM-GPG-KEY-openEuler
     " >> /etc/yum.repos.d/openEuler.repo
+  script: cat /etc/yum.repos.d/openEuler.repo
   repo_script: sed -i "s@repo.openeuler.org@repo.huaweicloud.com/openeuler@g" /etc/yum.repos.d/openEuler.repo
   setup_script: tests/ci/prepare-ci-environment.sh
   build_script: |
