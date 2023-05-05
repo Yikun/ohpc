@@ -160,7 +160,6 @@ jobs:
   test_on_openEuler:
     env:
       JOB_SKIP_CI_SPECS: |
-        components/runtimes/charliecloud/SPECS/charliecloud.spec
         components/perf-tools/likwid/SPECS/likwid.spec
     runs-on: ubuntu-latest
     name: Test on openEuler
