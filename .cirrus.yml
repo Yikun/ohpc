@@ -31,6 +31,7 @@ openeuler_task:
     image: docker.io/openeuler/openeuler:22.03-lts
     cpu: 4
     memory: 12G
+  set_mirror: sed -i "s@http://repo.openeuler.org@https://repo.huaweicloud.com/openeuler@g" /etc/yum.repos.d/openEuler.repo
   script: uname -a
   repo_script: sed -i "s@repo.openeuler.org@repo.huaweicloud.com/openeuler@g" /etc/yum.repos.d/openEuler.repo
   setup_script: tests/ci/prepare-ci-environment.sh
