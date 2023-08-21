@@ -19,7 +19,7 @@ Version: %{version}
 Release: %{?dist}.1
 Summary: Common top-level OpenHPC directories
 
-Group:   ohpc/admin
+Group:   %{PROJ_NAME}/admin
 License: ASL 2.0
 URL:     https://github.com/openhpc/ohpc
 Source0: OHPC_setup_compiler
