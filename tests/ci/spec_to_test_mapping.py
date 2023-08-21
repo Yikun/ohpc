@@ -209,6 +209,10 @@ test_map = {
         '',
         'singularity-ce'
     ],
+    'components/rms/magpie/SPECS/magpie.spec': [
+        'munge',
+        'pdsh-mod-slurm-ohpc openmpi4-gnu12-ohpc pdsh-ohpc'
+    ],
 }
 
 skip_ci_specs = []
