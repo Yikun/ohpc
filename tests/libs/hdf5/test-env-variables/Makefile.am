@@ -18,16 +18,4 @@
 
 ACLOCAL_AMFLAGS  = -I m4
 
-if V16
-DO_16=1_6
-endif
-
-if V18
-DO_18=1_8
-endif
-
-if V110
-DO_110=1_10
-endif
-
-SUBDIRS = $(DO_16) $(DO_18) $(DO_110) ohpc_module
+SUBDIRS = C FORTRAN
